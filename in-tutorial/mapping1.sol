@@ -11,6 +11,9 @@ contract Mappings {
         // Imperfect solution, see below
         addressesOfFavs.push(msg.sender); // array to store a list of all the keys present in favoriteNumbers
     }
-}
+//mapping data type is that it is not iterable - you cannot loop through and manipulate or return all values in the mapping
+//helper array
+
+
 
 }
