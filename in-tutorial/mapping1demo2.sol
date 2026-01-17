@@ -21,7 +21,16 @@ contract RecordRegistry {
         approvedRecords["Rumours"] = true;
         approvedRecords["Saturday Night Fever"] = true;
     }
+    
+    /**
+     * @dev Allows a user to get getApprovedRecords.
+     */
+        function getApprovedRecords() public view return (mapping) {
 
+        return approvedRecords;
+
+    }
+    
     /**
      * @dev Allows a user to mark an album as a favorite.
      * @param _albumName The name of the album.
@@ -30,19 +39,12 @@ contract RecordRegistry {
         userFavorites[msg.sender][_albumName] = true;
     }
 
+
     /**
      * @dev Allows a user to remove an album from their favorites.
      */
     function removeFavorite(string memory _albumName) public {
         userFavorites[msg.sender][_albumName] = false;
     }
-
-    function getApprovedRecords() public view return (mapping) {
-
-        return approvedRecords;
-
-    }
-
-
 
 }
