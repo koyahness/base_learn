@@ -33,7 +33,7 @@ contract RecordRegistry {
     }
 
     /**
-     * @dev Allows a user to get getApprovedRecords.
+     * @dev Allows a user to get Approved Records.
      */
         function getApprovedRecords() public view returns (string[] memory) {
         return approvedList;
@@ -75,7 +75,7 @@ contract RecordRegistry {
 
         // 1. Create a temporary array in memory to store matches.
         // It can't be longer than the total number of approved albums.
-        
+
         string[] memory tempFavorites = new string[](approvedList.length);
         uint256 count = 0;
 
