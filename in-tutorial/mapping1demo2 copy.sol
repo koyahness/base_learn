@@ -30,9 +30,24 @@ contract RecordRegistry {
     function _addRecord(string memory _name) private {
         approvedRecords[_name] = true;
         approvedList.push(_name);
+    }
 
 
-    
+    /**
+     * @dev Adds an album to the sender's favorites if it is approved.
+     * @param _albumName The name of the record to add.
+     */
+    function addRecord(string memory _albumName) public {
+        // Check if the album is approved
+        if (!approvedRecords[_albumName]) {
+            // Revert with the custom error and the specific album name
+            revert NotApproved(_albumName);
+        }
+
+        // Add to the user's mapping
+        userFavorites[msg.sender][_albumName] = true;
+    }
+
     /**
      * @dev Allows a user to get getApprovedRecords.
      */
