@@ -23,6 +23,9 @@ contract ArrayDemo {
 function debugLoadArray(uint _number) external {
     for(uint i = 0; i < _number; i++) {
         numbers.push(i);
+        if(i % 2 == 0) {
+            numEven++;
+        }
     }
 }
 
