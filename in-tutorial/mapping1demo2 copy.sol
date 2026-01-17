@@ -36,17 +36,21 @@ contract RecordRegistry {
     /**
      * @dev Allows a user to get getApprovedRecords.
      */
-        function getApprovedRecords() public view returns (mapping) {
-        return approvedRecords;
+        function getApprovedRecords() public view returns (string[] memory) {
+        return approvedList;
     }
     
+
+
     /**
      * @dev Allows a user to mark an album as a favorite.
      * @param _albumName The name of the album.
      */
     function markAsFavorite(string memory _albumName) public {
+        require(approvedRecords[_albumName], "This album is not on the approved list."); //Adds an album to favorites ONLY if it is in the approved list.
         userFavorites[msg.sender][_albumName] = true;
     }
+
 
 
     /**
