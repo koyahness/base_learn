@@ -1,5 +1,8 @@
 // SPDX-License-Identifier: MIT
+
 pragma solidity ^0.8.0;
+
+
 contract ArrayDemo {
     uint[] public numbers = [1,2,3,4,5,6,7,8,9,10];
 
@@ -16,6 +19,19 @@ contract ArrayDemo {
 }
 
     function getEvenNumbers() external view returns(uint[] memory) {
-        // TODOhhhhhhhhhhh
+        // filter through the array
+        uint resultsLength = _countEvenNumbers();
+        uint[] memory evenNumbers_results = new uint[](resultsLength);
+        uint cursor = 0;
+
+     for(uint i = 0; i < numbers.length; i++) {
+        if(numbers[i] % 2 == 0) {
+            evenNumbers_results[cursor] = numbers[i];
+            cursor++;
+        }
     }
+
+    return evenNumbers_results;
+}
+
 }
