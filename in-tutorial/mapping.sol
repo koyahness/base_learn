@@ -10,4 +10,8 @@ contract Mappings {
     favoriteNumbers[_address] = _favorite; //save to mapping with address as the key
 }
 
+function saveFavoriteNumber1(uint _favorite) public {
+    favoriteNumbers[msg.sender] = _favorite;
+}
+
 }
