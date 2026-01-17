@@ -6,7 +6,6 @@ contract ArrayDemo {
     function _countEvenNumbers() internal view returns(uint) {
 
     uint result = 0;
-
     for(uint i = 0; i < numbers.length; i++) {
         if(numbers[i] % 2 == 0) {
             result++;
@@ -15,14 +14,6 @@ contract ArrayDemo {
 
     return result;
 }
-
-
-
-
-
-
-
-
 
     function getEvenNumbers() external view returns(uint[] memory) {
         // TODOhhhhhhhhhhh
