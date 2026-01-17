@@ -15,6 +15,7 @@ contract Mappings {
 //helper array  helper array to store a list of all the keys present in favoriteNumbers
 
 //To return all of the favorite numbers, you can then iterate through addressesOfFavs
+// ook up that addresses’ favorite number, add it to a return array, and then return the array when you’re done
 
 
 }
