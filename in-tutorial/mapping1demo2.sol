@@ -36,4 +36,11 @@ contract RecordRegistry {
     function removeFavorite(string memory _albumName) public {
         userFavorites[msg.sender][_albumName] = false;
     }
+
+    function getApprovedRecords() public {
+
+    }
+
+
+    
 }
