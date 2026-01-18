@@ -6,7 +6,7 @@ contract Mappings {
 
     mapping (address => uint) favoriteNumbers; // a relationship between an address and a uint
 
-    
+    //But what if your users have favorite colors too? Or favorite cars? etc
 
     struct Favorites {
     uint favoriteNumber;
