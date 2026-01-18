@@ -25,7 +25,7 @@ contract Mappings {
 
 // Instantiating a Struct with Its Name
 
-Favorites memory myFavorites = Favorites({
+Favorites public myFavorites = Favorites({
     favoriteNumber: 29,
     birthDay: 14,
     favoriteColor: "red",
@@ -34,11 +34,18 @@ Favorites memory myFavorites = Favorites({
 
 //  shorthand, skip the member names and curly brackets are not included in this forma
 
-Favorites memory myFavorites2 = Favorites(
-    29,
-    14,
-    "red",
-    [uint(1), 2, 3, 4, 5]
+Favorites public myFavorites2 = Favorites(
+    239,
+    5,
+    "green",
+    [uint(1), 3, 3, 4, 5]
+);
+
+Favorites public myFavorites3 = Favorites(
+    439,
+    12,
+    "blue",
+    [uint(1), 5, 3, 4, 5]
 );
 
 
