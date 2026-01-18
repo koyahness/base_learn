@@ -17,11 +17,20 @@ contract Mappings {
 
     // use struct as custom data type
     struct Favorites {
-    uint favoriteNumber;
-    uint birthDay;
+    uint favoriteNumber; // no users have a favorite number greater than 65,536
+    uint birthDay; // everyone is born on a day of the month between 1-31, so could use smaller int
     string favoriteColor;
-    uint[5] lotteryNumbers; //lottery has five numbers
+    uint[5] lotteryNumbers; //lottery has five numbers(else could use dynamic array), we need a collection
 }
+
+// Instantiating a Struct with Its Name
+
+Favorites memory myFavorites = Favorites({
+    favoriteNumber: 29,
+    birthDay: 14,
+    favoriteColor: "red",
+    lotteryNumbers: [uint(1), 2, 3, 4, 5]
+});
 
 
 
