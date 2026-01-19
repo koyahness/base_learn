@@ -35,7 +35,7 @@ contract ContractA is ContractB {
         return whoAmIInternal();
     }
 
-     // Bad code example, do not use
+     // Bad code example, do not use..........The compiler will raise an error:
     function whoAmExternal_P() external pure returns (string memory) {
         return whoAmIPrivate();
     }
