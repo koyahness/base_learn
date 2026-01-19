@@ -88,10 +88,33 @@ function addReport(_employee_Ids) public view returns (uint[]) {
 
 }
 
-function resetReports(_employee_Ids) public view returns (uint[]) {
+function resetReports(_employee_Ids) public view {
 
     delete employee_Ids;
 
 }
 
+}
+
+
+contract Salesperson is Hourly {
+
+
+}
+
+
+contract EngineeringManager is Salaried,  Manager {
+
+    
+}
+
+
+contract InheritanceSubmission {
+    address public salesPerson;
+    address public engineeringManager;
+
+    constructor(address _salesPerson, address _engineeringManager) {
+        salesPerson = _salesPerson;
+        engineeringManager = _engineeringManager;
+    }
 }
