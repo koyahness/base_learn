@@ -27,7 +27,9 @@ contract ContractB {
 }
 
 
-
+abstract contract ContractD {
+    function whoAreYou() public virtual view returns (string memory);
+}
 
 // Inheritance between contracts is indicated by the is
 contract ContractA is ContractB {
@@ -64,7 +66,7 @@ contract ContractC {
 
 
 // bad code example, do not use
-contract ContractA_B is ContractB, ContractC {
+contract ContractA_B is ContractB, ContractC, contractD {
 
     //Add an enum at the contract level in ContractA to allow to switch contracts
     enum Type { None, ContractBType, ContractCType }
@@ -120,6 +122,3 @@ function whoAmExternal() external pure returns (string memory) {
 
 }
 
-abstract contract ContractD {
-    function whoAreYou() public virtual view returns (string memory);
-}
