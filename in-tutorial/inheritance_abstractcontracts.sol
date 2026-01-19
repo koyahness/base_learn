@@ -63,8 +63,7 @@ contract ContractC {
 //Add ContractD as an abstract contract. Add a virtual function called whoAreYou function, but do not add any implementation for that function.
 
 abstract contract ContractD {
-    function whoAreYou() public override view returns (string memory);
-    return "I'm a person!";
+    function whoAreYou() public virtual view returns (string memory);
 }
 //Only abstract contracts can declare functions that are not implemented. To fix this, provide an override implementation for whoAreYou in ContractA
 
@@ -127,6 +126,9 @@ function whoAmI() public override(ContractB, ContractC) view returns (string mem
 function whoAmExternal() external pure returns (string memory) {
         return whoAmIInternal();
     }
+
+function whoAreYou() public override view returns (string memory);
+    return "I'm a person!";
 
 }
 

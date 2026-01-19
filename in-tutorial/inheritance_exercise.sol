@@ -38,6 +38,11 @@ function getAnnualCost() public virtual view returns {
 
 contract Salaried is Employee  {
 
+uint public annualSalary;
+
+function getAnnualCost() public override view returns {
+
+}
 
 
 }
