@@ -48,7 +48,10 @@ contract ContractA is ContractB {
     // Will have more complex bytecode. In this case, mostly to store the long string present in the return:
 
     //Add an enum at the contract level in ContractA
+    enum Type { None, ContractBType, ContractCType }
     
+    Type contractType;
+
 
 }
 
