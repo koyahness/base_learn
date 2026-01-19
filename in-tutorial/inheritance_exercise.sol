@@ -8,9 +8,9 @@ uint public idNumber;
 uint public managerId;
 
 
-constructor (uint, uint) {
+constructor (uint _idNumber, uint _managerId) {
 
-    
+
 }
 
 
