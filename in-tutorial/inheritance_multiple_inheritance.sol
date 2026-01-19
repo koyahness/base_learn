@@ -52,6 +52,10 @@ contract ContractA is ContractB {
     
     Type contractType;
 
+    constructor (Type _initialType) {
+    contractType = _initialType;
+}
+
 
 }
 
