@@ -19,6 +19,8 @@ contract Complimenter {
         return string.concat("You look great today, ", name);
     }
 }
+//it takes time and effort to manually deploy a new version of the contract for each customer.
+//Luckily, there’s a way to write a contract that will act as a self-service portal for your customers.
 
 contract ComplimenterFactory {
 
