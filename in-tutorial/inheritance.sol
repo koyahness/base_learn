@@ -57,4 +57,5 @@ contract ContractA_B is ContractB, ContractC {
     function whoAmExternal() external pure returns (string memory) {
         return whoAmIInternal();
     }
+// The copmile error is because both ContractB and ContractC contain a function called whoAmI. As a result, the compiler needs instruction on which to use.
 }
