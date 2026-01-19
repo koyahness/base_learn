@@ -13,7 +13,7 @@ contract ContractB {
     }
 }
 
-
-contract ContractA {
+// Inheritance between contracts is indicated by the is
+contract ContractA is ContractB {
     
 }
