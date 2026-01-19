@@ -19,9 +19,6 @@ contract ContractB {
     function whoAmIExternal() external pure returns (string memory) {
         return whoAmIInternal();
     }
-
-
-
 }
 
 // Inheritance between contracts is indicated by the is
