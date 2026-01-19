@@ -11,11 +11,23 @@ contract ContractB {
     function whoAmI() external pure returns (string memory) {
         return "contract B";
     }
+
+    function whoAmIInternal() internal pure returns (string memory) {
+        return "contract B";
+    }
+
+    function whoAmIExternal() external pure returns (string memory) {
+        return whoAmIInternal();
+    }
+
+
+
 }
 
 // Inheritance between contracts is indicated by the is
 contract ContractA is ContractB {
 
     // Even though ContractA doesn’t have any functions in it, the deployment still shows the button to call whoAmI
+    // ContractA now reports that it is “contract B”, due to the inheritance of the function from Contract B.
     
 }
