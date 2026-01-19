@@ -8,7 +8,7 @@ pragma solidity ^0.8.0;
 //Contract A says that it is “contract A” and ContractB says that it is “contract B”.in-tutorial/inheritance.sol
 
 contract ContractB {
-    function whoAmI() public virtual pure returns (string memory) {
+    function whoAmI() public virtual view returns (string memory) {
         return "contract B";
     }
 
@@ -47,24 +47,14 @@ contract ContractA is ContractB {
     // A slightly more complex contract:
     // Will have more complex bytecode. In this case, mostly to store the long string present in the return:
 
-    //Add an enum at the contract level in ContractA
-    enum Type { None, ContractBType, ContractCType }
-    
-    Type contractType;
-
-    constructor (Type _initialType) {
-    contractType = _initialType;
-}
-
-
-}
+    }
 
 
 
 
 
 contract ContractC {
-    function whoAmI() public virtual pure returns (string memory) {
+    function whoAmI() public virtual view returns (string memory) {
         return "contract C";
     }
 }
@@ -75,9 +65,21 @@ contract ContractC {
 
 // bad code example, do not use
 contract ContractA_B is ContractB, ContractC {
-    function whoAmExternal() external pure returns (string memory) {
+
+    //Add an enum at the contract level in ContractA
+    enum Type { None, ContractBType, ContractCType }
+    
+    Type contractType;
+    
+    constructor (Type _initialType) {
+    contractType = _initialType;
+}
+
+
+function whoAmExternal() external pure returns (string memory) {
         return whoAmIInternal();
     }
+
 // The compile error is because both ContractB and ContractC contain a function called whoAmI. As a result, the compiler needs instruction on which to use.
 //One method to resolve this conflict is to use the virtual and override keywords to enable you to add functionality to choose which to call.
 //Add the virtual keyword to the whoAmI function in both ContractC and ContractB.
@@ -95,8 +97,23 @@ contract ContractA_B is ContractB, ContractC {
 // }
 
 // solution if visibility error
-function whoAmI() public override(ContractB, ContractC) pure returns (string memory) {
-    return ContractB.whoAmI();
+// function whoAmI() public override(ContractB, ContractC) pure returns (string memory) {
+
+//     return ContractB.whoAmI();
+// }
+
+
+// Bad code example, do not use
+//  function now reads from state, so it is no longer pure
+function whoAmI() public override(ContractB, ContractC) view returns (string memory) {
+    if(contractType == Type.ContractBType) {
+        return ContractB.whoAmI();
+    }
+    if(contractType == Type.ContractCType) {
+        return ContractC.whoAmI();
+    }
+    return "contract A";
 }
+
 
 }
