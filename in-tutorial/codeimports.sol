@@ -21,4 +21,8 @@ function registerVisitor() public {
     visitors.add(msg.sender);
 }
 
+function numberOfVisitors() public view returns (uint) {
+    return visitors.length();
+}
+
 }
