@@ -39,4 +39,9 @@ contract ContractA is ContractB {
     function whoAmExternal_P() external pure returns (string memory) {
         return whoAmIPrivate();
     }
+
+    //A contract that inherits from another contract will have that contract’s bytecode included within its own
+    // A slightly more complex contract:
+    // Will have more complex bytecode. In this case, mostly to store the long string present in the return:
+
 }
