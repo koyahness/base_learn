@@ -8,7 +8,7 @@ pragma solidity ^0.8.0;
 //Contract A says that it is “contract A” and ContractB says that it is “contract B”.in-tutorial/inheritance.sol
 
 contract ContractB {
-    function whoAmI() external pure returns (string memory) {
+    function whoAmI() public virtual pure returns (string memory) {
         return "contract B";
     }
 
@@ -47,7 +47,7 @@ contract ContractA is ContractB {
 }
 
 contract ContractC {
-    function whoAmI() external pure returns (string memory) {
+    function whoAmI() public virtual pure returns (string memory) {
         return "contract C";
     }
 }
@@ -61,4 +61,10 @@ contract ContractA_B is ContractB, ContractC {
 //One method to resolve this conflict is to use the virtual and override keywords to enable you to add functionality to choose which to call.
 //Add the virtual keyword to the whoAmI function in both ContractC and ContractB.
 // They must also be made public instead of external, because external functions cannot be called within the contract.
+
+// Bad code example, do not use
+function whoAmI() public override pure returns (string memory) {
+    return ContractB.whoAmI();
+}
+
 }
