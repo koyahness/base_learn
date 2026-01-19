@@ -26,7 +26,7 @@ constructor (uint _idNumber, uint _managerId) {
 
 
 
-function getAnnualCost() public virtual view returns {
+function getAnnualCost() public virtual view returns (uint) {
 
 }
 
@@ -40,7 +40,8 @@ contract Salaried is Employee  {
 
 uint public annualSalary;
 
-function getAnnualCost() public override view returns {
+function getAnnualCost() public override view returns (uint) {
+return annualSalary;
 
 }
 
