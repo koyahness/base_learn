@@ -35,10 +35,10 @@ contract ContractA is ContractB {
         return whoAmIInternal();
     }
 
-     // Bad code example, do not use..........The compiler will raise an error:
-    function whoAmExternal_P() external pure returns (string memory) {
-        return whoAmIPrivate();
-    }
+    //  // Bad code example, do not use..........The compiler will raise an error:
+    // function whoAmExternal_P() external pure returns (string memory) {
+    //     return whoAmIPrivate();
+    // }
 
     //A contract that inherits from another contract will have that contract’s bytecode included within its own
     // A slightly more complex contract:
@@ -63,7 +63,18 @@ contract ContractA_B is ContractB, ContractC {
 // They must also be made public instead of external, because external functions cannot be called within the contract.
 
 // Bad code example, do not use
-function whoAmI() public override pure returns (string memory) {
+// You’ll get another error, telling you to specify which contracts this function should override.
+// function whoAmI() public override pure returns (string memory) {
+//     return ContractB.whoAmI();
+// }
+
+// solution
+// function whoAmI() external override(ContractB, ContractC) pure returns (string memory) {
+//     return ContractB.whoAmI();
+// }
+
+// solution if visibility error
+function whoAmI() public override(ContractB, ContractC) pure returns (string memory) {
     return ContractB.whoAmI();
 }
 
