@@ -26,6 +26,9 @@ contract ContractB {
     }
 }
 
+
+
+
 // Inheritance between contracts is indicated by the is
 contract ContractA is ContractB {
     // Even though ContractA doesn’t have any functions in it, the deployment still shows the button to call whoAmI
@@ -46,11 +49,19 @@ contract ContractA is ContractB {
 
 }
 
+
+
+
+
 contract ContractC {
     function whoAmI() public virtual pure returns (string memory) {
         return "contract C";
     }
 }
+
+
+
+
 
 // bad code example, do not use
 contract ContractA_B is ContractB, ContractC {
