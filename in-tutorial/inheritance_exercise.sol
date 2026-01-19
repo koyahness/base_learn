@@ -105,7 +105,6 @@ contract Salesperson is Hourly {
 
 contract EngineeringManager is Salaried,  Manager {
 
-    
 }
 
 
