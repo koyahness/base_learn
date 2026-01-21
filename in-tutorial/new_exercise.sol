@@ -32,12 +32,10 @@ modifier onlyOwner() {
         if (msg.sender != owner) revert NotOwner(msg.sender);
         _;
     }
-
-
-
-    //add contsructor for owner
-    constructor (){
-        owner = msg.sender;
+    
+    //add contsructor for owner to be set when contract deployed
+   constructor(address _owner) {
+        owner = _owner;
     }
 
     
