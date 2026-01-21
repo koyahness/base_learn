@@ -23,7 +23,10 @@ contract AddressBook {
     // Array to keep track of all active IDs (for getAllContacts)
     uint[] private contactIds;
 
-
+// Custom Errors
+    error NotOwner(address caller);
+    error ContactNotFound(uint contactId);
+    error ContactAlreadyExists(uint contactId);
 
 
 
