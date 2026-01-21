@@ -6,6 +6,7 @@ pragma solidity ^0.8.0;
 
 contract AddressBook {
 
+    //state variable owner
     address owner;
 
     constructor (){
