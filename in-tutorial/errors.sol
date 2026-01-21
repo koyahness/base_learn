@@ -249,7 +249,8 @@ function badGetLastValueFixed() public pure returns (uint) {
 //Out of Gas
 // The default settings for Remix make it difficult to trigger an out of gas error because the VM will often crash first. For this example, go to the Deploy & Run Transactions tab and reduce the gas limit to 300000.
 
-
+// If you write code that can have an ambiguous execution time, it becomes very difficult to accurately estimate gas limits.
+// In this example, each loop has a 1 in 1000 chance of ending.
 
 
 
