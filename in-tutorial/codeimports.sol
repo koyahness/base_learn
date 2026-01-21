@@ -31,3 +31,7 @@ function numberOfVisitors() public view returns (uint) {
 }
 
 }
+
+
+//Imported a library from OpenZeppelin and implemented some of its functions.
+//Used the using keyword.
