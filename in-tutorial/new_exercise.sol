@@ -58,7 +58,7 @@ contract AddressBook {
 
             delete contacts;
 
-        } else{revert ContactNotFound(_id)}
+        } else{revert ContactNotFound(_id);}
 
 
         } else {revert NotOwner(msg.sender);}
