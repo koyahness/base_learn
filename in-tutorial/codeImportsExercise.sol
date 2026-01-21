@@ -27,7 +27,7 @@ SillyStringUtils.Haiku public haiku;
 
 
 // saveHaiku should accept three strings and save them as the lines of haiku.
-function saveHaiku (string _line1, string _line2, string _line3) public {
+function saveHaiku (string memory _line1, string memory _line2, string memory _line3) public {
     
     haiku.line1 = _line1;
     haiku.line2 = _line2;
@@ -35,13 +35,13 @@ function saveHaiku (string _line1, string _line2, string _line3) public {
 }
 
 // getHaiku should return the haiku as a Haiku type..
-function getHaiku () public return (Haiku) {
+function getHaiku () public view returns (SillyStringUtils.Haiku memory) {
     return haiku;
 }
 
 // shruggieHaiku should use the library to add 🤷 to the end of line3. It must not modify the original haiku. It should return the modified Haiku.
-function shruggieHaiku (string memory _input_Haiku) internal pure returns (Haiku) {
-    shruggie(_line3);
+function shruggieHaiku () public view returns (SillyStringUtils.Haiku memory) {
+        SillyStringUtils.shruggie(haiku.line3);
     return haiku;
 
 }
