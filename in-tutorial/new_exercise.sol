@@ -9,6 +9,8 @@ contract AddressBook {
     //state variable owner
     address owner;
 
+
+    //add contsructor for owner
     constructor (){
         owner = msg.sender;
     }
