@@ -60,4 +60,20 @@ function compilerConversionErrorFixed() public pure returns (uint) {
 }
 
 
+//
+
+// You cannot use operators between types as flexibly as you may be used to.
+
+// Bad code example, do not use
+// function compilerOperatorError() public pure returns (uint) {
+//     int8 first = 1;
+//     uint256 second = 2;
+
+//     uint sum = first + second;
+
+//     return sum;
+// }
+
+
+
 }
