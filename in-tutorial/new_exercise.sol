@@ -28,9 +28,8 @@ contract AddressBook {
 
     //declare struct array variable of Contact type
     Contact[] public non_deleted_contacts;
-
-
-
+    
+    // define and error
     error NotOwner(address _msg_sender);
 
 
