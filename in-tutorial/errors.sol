@@ -145,5 +145,12 @@ function stackDepthLimit() public pure returns (uint) {
     }
 
 
+// from solidity:
+// CompilerError: Stack too deep. Try compiling with --via-ir (cli) or the equivalent viaIR: true (standard JSON) while enabling the optimizer. Otherwise, try removing local variables.
+//   --> contracts/ErrorTriage.sol:92:17:
+//    |
+// 92 |                 eighth +
+//    |                 ^^^^^^
+
 
 }
