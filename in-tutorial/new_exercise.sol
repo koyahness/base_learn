@@ -61,6 +61,19 @@ modifier onlyOwner() {
     }
 
 
+    /**
+     * @dev Deletes a contact by ID. In Solidity, "delete" resets the struct to default values.
+     */
+    function deleteContact(uint _id) public onlyOwner {
+        if (contacts[_id].id == 0) revert ContactNotFound(_id);
+        
+        delete contacts[_id];
+        
+        // Note: To truly remove from contactIds array, you would need to loop or swap.
+        // For simplicity here, we just delete the mapping entry.
+    }
+
+
 
 
 
@@ -105,7 +118,7 @@ modifier onlyOwner() {
     error ContactNotFound(uint _msg_sender);
 
     // remove contact function
-    function deleteContact(uint _id) public returns (Contact memory){
+    function deleteContactw(uint _id) public returns (Contact memory){
 
     if (owner == msg.sender){
 
