@@ -70,7 +70,7 @@ contract AddressBook {
 }
 
 
-    //view function
+    //add getcontact function
     function getContact(uint _id) public returns (Contact memory){
 
          if(_id == contacts.id){
