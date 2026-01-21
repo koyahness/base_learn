@@ -281,6 +281,13 @@ function badRandomLoopFixed() public view returns (uint) {
 
 // 
 // Overflow or Underflow
+// The uint type will panic in the event of an overflow or underflow.
+
+function badSubtraction() public pure returns (uint) {
+    uint first = 1;
+    uint second = 2;
+    return first - second;
+}
 
 
 
