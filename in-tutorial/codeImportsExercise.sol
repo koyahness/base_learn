@@ -20,6 +20,6 @@ library SillyStringUtils {
 
 contract ImportsExercise {
 
-using ESillyStringUtils for SillyStringUtils.AddressSet;
+using SillyStringUtils for SillyStringUtils.Haiku; //import the library
 
 }
