@@ -72,7 +72,7 @@ contract AddressBook {
 
             return contacts[id];
 
-        } else{revert ContactNotFound(_id)}
+        } else{revert ContactNotFound(_id);}
 
     }
 
