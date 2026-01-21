@@ -86,9 +86,11 @@ contract AddressBook {
 contract AddressBookFactory{
 
     function deploy () public returns (AddressBook) {
-        / deploy AddressBook, owner = msg.sender
+        // deploy AddressBook, owner = msg.sender
 
     AddressBook newAddressBookContract = new AddressBook(msg.sender);
+
+    return newAddressBookContract; //newAddressBookContract.address
 
     }
     
