@@ -16,7 +16,7 @@ contract SetExploration {
 
 using EnumerableSet for EnumerableSet.AddressSet;
 
-EnumerableSet.AddressSet private visitors;
+EnumerableSet.AddressSet private visitors; //private variable of the AddressSet data types which is a struct in the EnumerableSet library that is imported
 
 // Add a function called registerVisitor that makes use of the library’s add function to add the sender of the message to the visitors set.
 
