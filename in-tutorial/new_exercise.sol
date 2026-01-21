@@ -72,9 +72,9 @@ modifier onlyOwner() {
         // Note: To truly remove from contactIds array, you would need to loop or swap.
         // For simplicity here, we just delete the mapping entry.
     }
-
-
-/**
+    
+    
+    /**
      * @dev Returns a specific contact. Made 'view' to avoid gas costs on calls.
      */
     function getContact(uint _id) public view returns (Contact memory) {
