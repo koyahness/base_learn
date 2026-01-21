@@ -81,7 +81,7 @@ contract AddressBook {
 
     }
 
-    //
+    //add getallcontact function
     function getAllContacts() public returns (Contact[] memory) {
         return non_deleted_contacts;
     }
