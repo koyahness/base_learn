@@ -1,8 +1,9 @@
 // SPDX-License-Identifier: MIT
-
 pragma solidity ^0.8.0;
 
-//knowledge of the new keyword.
+/** * @title AddressBook
+ * @dev Manages a list of contacts with restricted access to the owner.
+ */
 
 contract AddressBook {
 
