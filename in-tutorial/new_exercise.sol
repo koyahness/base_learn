@@ -6,12 +6,18 @@ pragma solidity ^0.8.0;
 
 contract AddressBook {
 
+    struct {
+
+    }
+
     // add function
-    function addContact() public {};
+    function addContact() public {}
 
     // remove function
+    function removeContact() public {}
 
-    function removeContact() public {};
+    //view function
+    function viewContact() public {}
 
 }
 
