@@ -290,5 +290,11 @@ function badSubtraction() public pure returns (uint) {
 }
 
 
+// Fix by changing your code to handle the expected range of values.
+function badSubstractionFixed() public pure returns (int) {
+    int first = 1;
+    int second = 2;
+    return first - second;
+}
 
 }
