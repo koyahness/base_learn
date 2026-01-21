@@ -10,7 +10,8 @@ import "./EnumerableSet.sol";
 
 contract SetExploration {
 
-//To use the EnumerableSet, you need to use the **using** keyword. This directive attaches all of the library methods to the type.
+// To use the EnumerableSet, you need to use the **using** keyword.
+// This directive attaches all of the library methods to the type.
 // Doing so allows you to call the method on the variable with the dot notation, and the variable itself will be supplied as the first argument.
 
 using EnumerableSet for EnumerableSet.AddressSet;
