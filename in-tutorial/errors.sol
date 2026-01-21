@@ -37,11 +37,22 @@ function compilerTypeErrorFixed() public pure returns (string memory) {
 // Solidity only allows this under very narrow circumstances where there is no possibility of ambiguous interpretation of the data.
 
 // Bad code example, do not use
-function compilerConversionError() public pure returns (uint) {
-    int8 first = 1;
+// function compilerConversionError() public pure returns (uint) {
+//     int8 first = 1;
 
-    return first;
-}
+//     return first;
+// }
+
+
+//value is daclared as int8 but requesting to rerun as int
+
+// from solidity:
+// TypeError: Return argument type int8 is not implicitly convertible to expected type (type of first return variable) uint256.
+//   --> contracts/ErrorTriage.sol:15:16:
+//    |
+// 15 |         return first;
+//    |                ^^^^^
+
 
 
 }
