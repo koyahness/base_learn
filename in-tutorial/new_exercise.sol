@@ -74,7 +74,13 @@ modifier onlyOwner() {
     }
 
 
-
+/**
+     * @dev Returns a specific contact. Made 'view' to avoid gas costs on calls.
+     */
+    function getContact(uint _id) public view returns (Contact memory) {
+        if (contacts[_id].id == 0) revert ContactNotFound(_id);
+        return contacts[_id];
+    }
 
 
 
@@ -134,7 +140,7 @@ modifier onlyOwner() {
 
 
     //add getcontact function
-    function getContact(uint _id) public returns (Contact memory){
+    function getContactw(uint _id) public returns (Contact memory){
 
          if(_id == contacts.id){
 
