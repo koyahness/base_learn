@@ -252,6 +252,8 @@ function badGetLastValueFixed() public pure returns (uint) {
 // If you write code that can have an ambiguous execution time, it becomes very difficult to accurately estimate gas limits.
 // In this example, each loop has a 1 in 1000 chance of ending.
 
+//block.timestamp can be manipulated. DO NOT use this as a source of randomness if any value can be derived from one outcome over another!
+
 
 
 }
