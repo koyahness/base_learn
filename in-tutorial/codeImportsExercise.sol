@@ -40,9 +40,10 @@ function getHaiku () public view returns (SillyStringUtils.Haiku memory) {
 }
 
 // shruggieHaiku should use the library to add 🤷 to the end of line3. It must not modify the original haiku. It should return the modified Haiku.
-function shruggieHaiku () public returns (SillyStringUtils.Haiku memory) {
-        haiku.line3 = SillyStringUtils.shruggie(haiku.line3);
-    return haiku;
+function shruggieHaiku () public view returns (SillyStringUtils.Haiku memory) {
+   SillyStringUtils.Haiku memory haiku1 = haiku;
+        haiku1.line3 = SillyStringUtils.shruggie(haiku1.line3);
+    return haiku1;
 
 }
 
