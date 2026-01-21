@@ -39,7 +39,7 @@ modifier onlyOwner() {
     }
 
     /**
-     * @dev Adds a new contact. Only the owner can call this.
+     * @dev 
      */
     function addContact(
         uint _id, 
@@ -84,7 +84,7 @@ modifier onlyOwner() {
 
 
     // add function
-    function addContact(uint _id, string memory _firstName, string memory _lastName, uint[] memory _phoneNumbers) public {
+    function addContactw(uint _id, string memory _firstName, string memory _lastName, uint[] memory _phoneNumbers) public {
         if (owner == msg.sender){
 
            contacts = Contact (
