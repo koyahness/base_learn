@@ -18,6 +18,7 @@ library SillyStringUtils {
 
 // Create a contract called ImportsExercise. It should import a copy of SillyStringUtils
 
+// Using the library
 contract ImportsExercise {
 
 using SillyStringUtils for SillyStringUtils.Haiku; //import the library
