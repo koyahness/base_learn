@@ -26,6 +26,7 @@ contract AddressBook {
     //declare struct variable of Contact type
     Contact public contacts;
 
+    //declare struct array variable of Contact type
     Contact[] public non_deleted_contacts;
 
 
