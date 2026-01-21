@@ -21,6 +21,8 @@ contract AddressBook {
 
     Contact public contacts;
 
+    Contact[] public non-deleted-contacts;
+
 
 
     error NotOwner(address _msg_sender);
