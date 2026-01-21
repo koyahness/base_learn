@@ -6,8 +6,11 @@ pragma solidity ^0.8.0;
 
 contract AddressBook {
 
-    struct {
-
+    struct Contact {
+       uint id;
+       string firstName;
+       string lastName;
+       uint[] phoneNumbers;
     }
 
     // add function
