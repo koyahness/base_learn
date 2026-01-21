@@ -9,7 +9,9 @@ contract AddressBook {
     // add function
     function addContact() public {};
 
-    function addContact() public {};
+    // remove function
+
+    function removeContact() public {};
 
 }
 
