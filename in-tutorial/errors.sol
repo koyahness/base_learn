@@ -221,6 +221,17 @@ function stackDepthLimitFixed() public pure returns (uint) {
 // These return with a very basic error code, which Remix unfortunately hides.
 // However, it makes up for that annoyance by providing a very powerful debugger.
 
+// The Remix VM doesn’t behave exactly the same as true onchain operations,
+// so note that these errors will not behave exactly the same if triggered while testing with Hardhat,
+// or called from a front end.
+
+//Array Index Out-of-Bounds
+// Bad code example, do not use
+function badGetLastValue() public pure returns (uint) {
+    uint[4] memory arr = [uint(1), 2, 3, 4];
+
+    return arr[arr.length];
+}
 
 
 
