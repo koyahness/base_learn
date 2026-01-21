@@ -74,6 +74,31 @@ function compilerConversionErrorFixed() public pure returns (uint) {
 //     return sum;
 // }
 
+// Operator errors are often paired with a type error.
+
+// from solidity:
+// TypeError: Operator + not compatible with types int8 and uint256.
+//   --> contracts/ErrorTriage.sol:22:20:
+//    |
+// 22 |         uint sum = first + second;
+//    |                    ^^^^^^^^^^^^^^
+
+// from solidity:
+// TypeError: Type int8 is not implicitly convertible to expected type uint256.
+//   --> contracts/ErrorTriage.sol:22:9:
+//    |
+// 22 |         uint sum = first + second;
+//    |         ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
+function compilerOperatorErrorFixed() public pure returns (uint) {
+    int8 first = 1;
+    uint256 second = 2;
+
+    uint sum = uint(uint8(first)) + second;
+
+    return sum;
+}
 
 
 }
