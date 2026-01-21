@@ -17,3 +17,9 @@ library SillyStringUtils {
 
 
 // Create a contract called ImportsExercise. It should import a copy of SillyStringUtils
+
+contract ImportsExercise {
+
+using ESillyStringUtils for SillyStringUtils.AddressSet;
+
+}
