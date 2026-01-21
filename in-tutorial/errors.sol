@@ -227,12 +227,23 @@ function stackDepthLimitFixed() public pure returns (uint) {
 
 //Array Index Out-of-Bounds
 // Bad code example, do not use
-function badGetLastValue() public pure returns (uint) {
+// function badGetLastValue() public pure returns (uint) {
+//     uint[4] memory arr = [uint(1), 2, 3, 4];
+
+//     return arr[arr.length]; length is 4 but last index is 3
+// }
+
+// call to ErrorTriage.badGetLastValue errored: VM error: revert.
+
+// revert
+// 	The transaction has been reverted to the initial state.
+// Note: The called function should be payable if you send value and the value you send should be less than your current balance.
+// Debug the transaction to get more information.
+
+function badGetLastValueFixed() public pure returns (uint) {
     uint[4] memory arr = [uint(1), 2, 3, 4];
 
-    return arr[arr.length];
+    return arr[arr.length-1];
 }
-
-
 
 }
