@@ -267,4 +267,15 @@ function badRandomLoop() public view returns (uint) {
     return seed;
 }
 
+function badRandomLoopFixed() public view returns (uint) {
+    // DO NOT USE THIS METHOD FOR RANDOM NUMBERS!!! IT IS EASILY EXPLOITABLE!!!
+    uint times = uint(keccak256(abi.encodePacked(block.timestamp))) % 1000;
+
+    for(uint i = 0; i <= times; i++) {
+        // ...do something
+    }
+
+    return times;
+}
+
 }
