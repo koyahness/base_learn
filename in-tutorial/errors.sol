@@ -153,4 +153,49 @@ function compilerOperatorErrorFixed() public pure returns (uint) {
 //    |                 ^^^^^^
 
 
+function stackDepthLimitFixed() public pure returns (uint) {
+    uint subtotalA;
+    {
+        uint first = 1;
+        uint second = 2;
+        uint third = 3;
+        uint fourth = 4;
+        uint fifth = 5;
+        uint sixth = 6;
+        uint seventh = 7;
+        uint eighth = 8;
+        subtotalA = first +
+            second +
+            third +
+            fourth +
+            fifth +
+            sixth +
+            seventh +
+            eighth;
+    }
+
+    uint subtotalB;
+    {
+        uint ninth = 9;
+        uint tenth = 10;
+        uint eleventh = 11;
+        uint twelfth = 12;
+        uint thirteenth = 13;
+        uint fourteenth = 14;
+        uint fifteenth = 15;
+        uint sixteenth = 16;
+        subtotalB = ninth +
+            tenth +
+            eleventh +
+            twelfth +
+            thirteenth +
+            fourteenth +
+            fifteenth +
+            sixteenth;
+    }
+
+    return subtotalA + subtotalB;
+}
+
+
 }
