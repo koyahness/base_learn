@@ -214,6 +214,13 @@ function stackDepthLimitFixed() public pure returns (uint) {
 
 
 // Logical Errors
+// Logical errors occur when your code is syntactically correct,
+// but still results in a data state that is a violation of the rules of the language.
+
+// A panic occurs when your code tries to do an illegal operation.
+// These return with a very basic error code, which Remix unfortunately hides.
+// However, it makes up for that annoyance by providing a very powerful debugger.
+
 
 
 
