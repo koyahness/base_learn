@@ -19,14 +19,19 @@ contract AddressBook {
        uint[] phoneNumbers;
     }
 
-    error NotOnwer(address _msg_sender, "not the owner")
+    Contact public contacts;
+
+
+
+    error NotOwner(address _msg_sender, "not the owner")
 
 
     // add function
     function addContact(address _owner) public {
         if (owner == msg.sender){
+            
 
-        } else {revert NotOnwer(msg.sender)}
+        } else {revert NotOwner(msg.sender)}
 
     }
 
