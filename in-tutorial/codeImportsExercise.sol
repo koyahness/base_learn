@@ -39,6 +39,8 @@ function getHaiku () public return (Haiku) {
     return haiku;
 }
 
-
+// shruggieHaiku should use the library to add 🤷 to the end of line3. It must not modify the original haiku. It should return the modified Haiku.
+function shruggieHaiku () internal pure returns (Haiku) {
+}
 
 }
