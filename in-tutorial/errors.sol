@@ -24,10 +24,24 @@ pragma solidity ^0.8.0;
 //  Fix by correcting the type or value, as appropriate for your needs:
 
 contract errors {
-    
-function compilerTypeErrorFixed() public pure returns (string) {
-    string myNumber = "One";
+
+function compilerTypeErrorFixed() public pure returns (string memory) {
+    string memory myNumber = "One";
     return myNumber;
 }
+
+
+// Conversion Errors
+
+// Conversion errors occur when you attempt to implicitly convert one type to another.
+// Solidity only allows this under very narrow circumstances where there is no possibility of ambiguous interpretation of the data.
+
+// Bad code example, do not use
+function compilerConversionError() public pure returns (uint) {
+    int8 first = 1;
+
+    return first;
+}
+
 
 }
