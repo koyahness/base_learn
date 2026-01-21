@@ -8,8 +8,8 @@ contract AddressBook {
 
     address owner;
 
-    constructor {
-        owner = msg.sender
+    constructor (){
+        owner = msg.sender;
     }
 
     struct Contact {
@@ -19,9 +19,14 @@ contract AddressBook {
        uint[] phoneNumbers;
     }
 
+    error NotOnwer(address _msg_sender, "not the owner")
+
+
     // add function
-    function addContact() public {
-        require (owner = msg.sender);
+    function addContact(address _owner) public {
+        if (owner == msg.sender){
+
+        } else {revert NotOnwer(msg.sender)}
 
     }
 
