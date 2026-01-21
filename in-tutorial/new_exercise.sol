@@ -18,6 +18,16 @@ contract AddressBook {
        uint[] phoneNumbers;
     }
 
+ // Mapping for fast ID-based lookups
+    mapping(uint => Contact) private contacts;
+    // Array to keep track of all active IDs (for getAllContacts)
+    uint[] private contactIds;
+
+
+
+
+
+
 
     //add contsructor for owner
     constructor (){
