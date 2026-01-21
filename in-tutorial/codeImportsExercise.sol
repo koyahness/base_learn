@@ -23,7 +23,7 @@ contract ImportsExercise {
 
 using SillyStringUtils for SillyStringUtils.Haiku; //import the library
 
-
+    // Public instance of Haiku
 SillyStringUtils.Haiku public haiku;
 
 
