@@ -38,7 +38,36 @@ modifier onlyOwner() {
         owner = _owner;
     }
 
-    
+    /**
+     * @dev Adds a new contact. Only the owner can call this.
+     */
+    function addContact(
+        uint _id, 
+        string memory _firstName, 
+        string memory _lastName, 
+        uint[] memory _phoneNumbers
+    ) public onlyOwner {
+        if (contacts[_id].id != 0) revert ContactAlreadyExists(_id);
+
+        Contact memory newContact = Contact({
+            id: _id,
+            firstName: _firstName,
+            lastName: _lastName,
+            phoneNumbers: _phoneNumbers
+        });
+
+        contacts[_id] = newContact;
+        contactIds.push(_id);
+    }
+
+
+
+
+
+
+
+
+
 
 
 
