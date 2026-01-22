@@ -4,7 +4,7 @@ import { HardhatEthersSigner } from '@nomicfoundation/hardhat-ethers/signers';
 import { Token, Token__factory, PoolCreator, PoolCreator__factory } from '../typechain-types';
 
 describe('PoolCreator tests', function () {
-  const UNISWAP_FACTORY_ADDRESS = '0x1F98431c8aD98523631AE4a59f267346ea31F984';
+  const UNISWAP_FACTORY_ADDRESS = '0x1F98431c8aD98523631AE4a59f267346ea31F984'; //address of the Uniswap pool factory deployed to the Ethereum mainnet.
   let tokenA: Token;
   let tokenB: Token;
   let poolCreator: PoolCreator;
