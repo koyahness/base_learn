@@ -113,3 +113,23 @@ forge create ./src/NFT.sol:NFT --rpc-url $BASE_MAINNET_RPC --account deployer
 ```bash
 forge verify-contract <DEPLOYED_ADDRESS> ./src/NFT.sol:NFT --chain 84532 --watch
 ```
+
+output
+
+```
+Start verifying contract `0x71bfCe1172A66c1c25A50b49156FAe45EB56E009` deployed on base-sepolia
+
+Submitting verification for [src/NFT.sol:NFT] 0x71bfCe1172A66c1c25A50b49156FAe45EB56E009.
+Submitted contract for verification:
+        Response: `OK`
+        GUID: `3i9rmtmtyyzkqpfvy7pcxj1wtgqyuybvscnq8d7ywfuskss1s7`
+        URL:
+        https://sepolia.basescan.org/address/0x71bfce1172a66c1c25a50b49156fae45eb56e009
+Contract verification status:
+Response: `NOTOK`
+Details: `Pending in queue`
+Contract verification status:
+Response: `OK`
+Details: `Pass - Verified`
+Contract successfully verified
+```
