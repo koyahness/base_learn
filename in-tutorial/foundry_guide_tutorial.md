@@ -69,7 +69,15 @@ output:
 [profile.default]
 src = 'contracts'
 ```
+other settings in the foundry.toml file
 
+```bash
+[profile.default]
+src = 'src'
+out = 'out'
+libs = ['lib']
+solc_version = "0.8.23"
+```
 
 ## simple NFT smart contract (ERC-721) written in the Solidity programming language that can be used to replace src/Counter.sol
 
