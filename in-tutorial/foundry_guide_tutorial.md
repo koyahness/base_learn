@@ -502,3 +502,31 @@ output
 Running 1 tests for test/Counter.t.sol:CounterTest
 [PASS] testFuzz_SetNumber(uint256) etc
 ```
+
+# Generating random numbers contracts using Supra dVRF
+
+ use Supra dVRF to serve random numbers using an onchain randomness generation mechanism directly within your smart contracts on the Base testnet.
+
+* Set up a smart contract project for Base using Foundry
+* Install the Supra dVRF as a dependency
+* Use Supra dVRF within your smart contract
+* Deploy and test your smart contracts on Base
+
+A Verifiable Random Function (VRF) provides a solution for generating random outcomes in a manner that is both decentralized and verifiably recorded onchain. VRFs are crucial for applications where randomness integrity is paramount, such as in gaming or prize drawings.
+
+Supra dVRF provides a decentralized VRF that ensures that the outcomes are not only effectively random but also responsive, scalable, and easily verifiable, thereby addressing the unique needs of onchain applications for trustworthy and transparent randomness.
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract RNGContract {
+    address supraAddr;
+    address supraClientAddress;
+
+    constructor(address supraSC) {
+        supraAddr = supraSC;
+        supraClientAddress = msg.sender;
+    }
+}
+```
