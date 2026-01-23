@@ -79,6 +79,24 @@ libs = ['lib']
 solc_version = "0.8.23"
 ```
 
+other settings in the foundry.toml file
+
+```bash
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+solc_version = "0.8.23"
+
+[rpc_endpoints]
+base = "https://mainnet.base.org"
+baseSepolia = "https://sepolia.base.org"
+
+[etherscan]
+baseSepolia = { key = "${BASESCAN_API_KEY}", url = "https://api-sepolia.basescan.org/api" }
+base = { key = "${BASESCAN_API_KEY}", url = "https://api.basescan.org/api" }
+```
+
 ## simple NFT smart contract (ERC-721) written in the Solidity programming language that can be used to replace src/Counter.sol
 
 ```solidity
