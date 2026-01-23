@@ -79,14 +79,25 @@ cast wallet list
 
 ## Adding Base as a network
 
+API key to be defined as ETHERSCAN_API_KEY
+
 ```bash
 nano .env
 
-// add the follwing to the file
+# add the follwing to the file
 
 BASE_MAINNET_RPC="https://mainnet.base.org"
 BASE_SEPOLIA_RPC="https://sepolia.base.org"
 ETHERSCAN_API_KEY="<YOUR API KEY>"
 
 ```
+
+## Loading environment variables
+
+load the environment variables in the current command line session:
+
+```bash
+source .env
+```
+
 
