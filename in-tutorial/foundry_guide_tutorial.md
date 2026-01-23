@@ -37,7 +37,7 @@ forge init
     └── Counter.t.sol
 ```
 
-## simple NFT smart contract (ERC-721) written in the Solidity programming language th
+## simple NFT smart contract (ERC-721) written in the Solidity programming language that can be used to replace src/Counter.sol
 
 ```solidity
 // SPDX-License-Identifier: MIT
@@ -62,4 +62,10 @@ contract NFT is ERC721 {
 
 ```bash
 forge install openzeppelin/openzeppelin-contracts
+```
+
+## compiling the contract
+
+```bash
+forge build
 ```
