@@ -317,5 +317,46 @@ Running 2 tests for test/Counter.t.sol:CounterTest
 Test result: ok. 2 passed; 0 failed; finished in 13.57ms
 ```
 
+## Using Cheatcodes
 
+Foundry includes a set of cheatcodes, which are special instructions that are accessible using the vm instance in your tests. Cheatcodes allow you to perform various tasks, including:
+Manipulate the state of the blockchain
 
+* Test reverts
+* Test events
+* Change block number
+* Change identity
+
+To start, use a cheatcode to modify the msg.sender of your tests
+
+```solidity
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.19;
+
+import "forge-std/console.sol";
+
+contract Counter {
+    uint256 public number;
+
+    function setNumber(uint256 newNumber) public {
+        console.log("The sender is %s", msg.sender);
+        number = newNumber;
+    }
+
+    function increment() public {
+        console.log("The sender is %s", msg.sender);
+        number++;
+    }
+}
+```
+
+output
+
+```
+Running 2 tests for test/Counter.t.sol:CounterTest
+[PASS] testIncrement() (gas: 31531)
+[PASS] testSetNumber(uint256) (runs: 256, μ: 30684, ~: 31540)
+Test result: ok. 2 passed; 0 failed; finished in 19.64ms
+```
+
+It seems the logs are not being shown. The reason is because the forge test command includes a flag that enable you to include more details of the logs emitted during the execution of the tests.
