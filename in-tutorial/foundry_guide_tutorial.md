@@ -108,3 +108,8 @@ forge create ./src/NFT.sol:NFT --rpc-url $BASE_SEPOLIA_RPC --account deployer
 forge create ./src/NFT.sol:NFT --rpc-url $BASE_MAINNET_RPC --account deployer
 ```
 
+## Verifying the Smart Contract
+
+```bash
+forge verify-contract <DEPLOYED_ADDRESS> ./src/NFT.sol:NFT --chain 84532 --watch
+```
