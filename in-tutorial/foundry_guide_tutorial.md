@@ -12,13 +12,13 @@ Foundry is a powerful suite of tools to develop, test, and debug your smart cont
 
 ## Have Foundry installed
 
-```
+```bash
 curl -L https://foundry.paradigm.xyz | bash
 ```
 
 ## Creating a project
 
-```
+```bash
 mkdir myproject
 cd myproject
 forge init
@@ -26,6 +26,7 @@ forge init
 
 ## Foundry project, basic layout
 
+```bash
 .
 ├── foundry.toml
 ├── script
@@ -34,6 +35,7 @@ forge init
  │   └── Counter.sol
 └── test
     └── Counter.t.sol
+```
 
 ## simple NFT smart contract (ERC-721) written in the Solidity programming language th
 
