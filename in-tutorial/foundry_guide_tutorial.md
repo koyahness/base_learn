@@ -155,4 +155,16 @@ This can be done with Foundry using cast, key component of the Foundry toolkit.
 
 ## Performing a call
 
-Cast enables us to interact with contracts, send transactions, and get onchain data using Ethereum RPC calls. 
+* Cast enables us to interact with contracts, send transactions, and get onchain data using Ethereum RPC calls.
+  
+* Perform a call from your account, without publishing a transaction.
+
+```bash
+cast call <DEPLOYED_ADDRESS> --rpc-url $BASE_SEPOLIA_RPC "balanceOf(address)" <YOUR_ADDRESS_HERE>
+```
+
+output is as follows:
+
+```
+You should receive 0x0000000000000000000000000000000000000000000000000000000000000000 in response, which equals 0 in hexadecimal. And that makes sense — while you’ve deployed the NFT contract, no NFTs have been minted yet and therefore your account’s balance is zero.
+```
