@@ -133,3 +133,11 @@ Response: `OK`
 Details: `Pass - Verified`
 Contract successfully verified
 ```
+
+You can’t re-verify a contract identical to one that has already been verified. If you attempt to do so, such as verifying the above contract, you’ll get an error similar to:
+
+```
+Start verifying contract `0x71bfCe1172A66c1c25A50b49156FAe45EB56E009` deployed on base-sepolia
+
+Contract [src/NFT.sol:NFT] "0x71bfCe1172A66c1c25A50b49156FAe45EB56E009" is already verified. Skipping verification.
+```
