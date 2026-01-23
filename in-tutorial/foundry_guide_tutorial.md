@@ -480,7 +480,15 @@ fuzz test
 ```bash
 [fuzz]
 runs = 256
-out = 'out'
-libs = ['lib']
-solc
+max_test_rejects = 65536
+seed = "0x3e8"
+dictionary_weight = 40
+include_storage = true
+include_push_bytes = true
+```
+
+run:
+
+```bash
+forge test -vv
 ```
