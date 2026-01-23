@@ -74,6 +74,19 @@ forge build
 
 ```bash
 cast wallet import deployer --interactive
+cast wallet list
 ```
 
+## Adding Base as a network
+
+```bash
+nano .env
+
+// add the follwing to the file
+
+BASE_MAINNET_RPC="https://mainnet.base.org"
+BASE_SEPOLIA_RPC="https://sepolia.base.org"
+ETHERSCAN_API_KEY="<YOUR API KEY>"
+
+```
 
