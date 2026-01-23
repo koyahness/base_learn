@@ -24,7 +24,7 @@ forge --version
 cast --version
 chisel --version
 anvil --version
-bash
+```
 
 ## Creating a project
 
@@ -33,6 +33,22 @@ mkdir myproject
 cd myproject
 forge init
 ```
+or run:
+
+```bash
+forge init hello_foundry_in_base
+```
+
+output:
+
+```
+├── lib          # all the libraries installed
+├── script       # scripts folder, e.g., deploy scripts
+├── src          # smart contracts folder
+├── test         # tests folder
+└── foundry.toml # foundry configuration file
+```
+<!-- notice a .gitmodules file — this is because Foundry handles dependencies using Git submodules. -->
 
 ## Foundry project, basic layout
 
