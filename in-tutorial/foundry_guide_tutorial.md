@@ -259,3 +259,5 @@ And the response: 0x000000000000000000000000000000000000000000000000000000000000
 
 # Foundry: Testing smart contracts
 
+* Write and execute tests written in Solidity using the Forge Standard Library with Foundry
+* se the cheatcodes that Foundry provides to test your smart contracts
