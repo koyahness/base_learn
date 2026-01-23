@@ -360,3 +360,89 @@ Test result: ok. 2 passed; 0 failed; finished in 19.64ms
 ```
 
 It seems the logs are not being shown. The reason is because the forge test command includes a flag that enable you to include more details of the logs emitted during the execution of the tests.
+
+You can control that by including different levels of the verbose flag — -vv up to -vvvvv. For more details about the level of verbosity you can refer to the Logs and Traces section of the Foundry documentation.
+
+run:
+
+```bash
+foundry test -vv
+```
+
+output:
+
+```
+Running 2 tests for test/Counter.t.sol:CounterTest
+[PASS] testIncrement() (gas: 31531)
+Logs:
+  The sender is 0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496
+  The sender is 0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496
+
+[PASS] testSetNumber(uint256) (runs: 256, μ: 30607, ~: 31540)
+Logs:
+  The sender is 0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496
+
+Test result: ok. 2 passed; 0 failed; finished in 17.89ms
+```
+
+Now, modify the test file using prank cheatcode, which allow you to modify the msg.sender of the next transaction. You will also use the addr cheatcode, which allow you to generate an address using any private key, which can simply be a hex number.
+
+Include some console.log statements to understand better the execution flow.
+
+```solidity
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.19;
+
+import "forge-std/Test.sol";
+import "../src/Counter.sol";
+
+contract CounterTest is Test {
+    Counter public counter;
+
+    function setUp() public {
+        counter = new Counter();
+        console.log("Calling on Setup");
+        counter.setNumber(0);
+    }
+
+    function testIncrement() public {
+        console.log("Calling on testIncrement");
+        vm.prank(vm.addr(0x01));
+        counter.increment();
+        assertEq(counter.number(), 1);
+    }
+
+    function testSetNumber(uint256 x) public {
+        console.log("Calling on testSetNumber");
+        vm.prank(vm.addr(0x02));
+        counter.setNumber(x);
+        assertEq(counter.number(), x);
+    }
+}
+```
+
+run:
+
+```bash
+forge test -vv
+```
+
+output
+
+```
+Running 2 tests for test/Counter.t.sol:CounterTest
+[PASS] testIncrement() (gas: 35500)
+Logs:
+  Calling on Setup
+  The sender is 0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496
+  Calling on testIncrement
+  The sender is 0x7E5F4552091A69125d5DfCb7b8C2659029395Bdf
+
+[PASS] testSetNumber(uint256) (runs: 256, μ: 34961, ~: 35506)
+Logs:
+  Calling on Setup
+  The sender is 0x7FA9385bE102ac3EAc297483Dd6233D62b3e1496
+
+Test result: ok. 2 passed; 0 failed; finished in 48.75ms
+```
+Notice how you call the cheatcode vm.prank before the call to the counter.increment() and counter.setNumber(x) functions. This allows you to specify a particular address to become the msg.sender in the contract. Since the vm.prank accepts an address, you simply generate an address using the cheatcode vm.addr, where you pass a simple hexadecimal number, which is a valid private key.
