@@ -23,3 +23,14 @@ mkdir myproject
 cd myproject
 forge init
 ```
+
+## Foundry project, basic layout
+
+.
+├── foundry.toml
+├── script
+ │   └── Counter.s.sol
+├── src
+ │   └── Counter.sol
+└── test
+    └── Counter.t.sol
