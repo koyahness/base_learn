@@ -26,8 +26,15 @@ contract MinimalToken {
 
 // Add a function called transfer that accepts an address of _to and a uint for the _amount. You don’t need to add anything for _from, because that should only be msg.sender. The function should subtract the _amount from the msg.sender and add it to _to
 
+error InsufficientTokens(int _balance);
+
 function transfer(address _to, uint _amount) public {
-    balances[msg.sender] -= _amount;
+    int newSenderBalance = int(balances[msg.sender] - _amount);
+    if (newSenderBalance < 0) {
+        revert InsufficientTokens(newSenderBalance);
+    }
+
+    balances[msg.sender] = uint(newSenderBalance);
     balances[_to] += _amount;
 }
 
