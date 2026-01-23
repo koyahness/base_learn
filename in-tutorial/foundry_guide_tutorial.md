@@ -14,6 +14,8 @@ Foundry is a powerful suite of tools to develop, test, and debug your smart cont
 
 ```bash
 curl -L https://foundry.paradigm.xyz | bash
+
+foundryup
 ```
 
 ## Creating a project
