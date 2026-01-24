@@ -12,6 +12,7 @@ contract WeightedVoting is ERC20 {
 using EnumerableSet for EnumerableSet.AddressSet;
 
 uint public maxSupply;
+uint public claimedSupply;
 // Issue[] public issues;
 
 constructor {
@@ -57,6 +58,7 @@ if (maxSupply >=  claimTokens){
      _mint(msg.sender, claimTokens);
     claimed[msg.sender] == true;
     maxSupply -= claimTokens;
+    claimedSupply += claimTokens;
     }else {AllTokensClaimed()}
 
 }
@@ -65,14 +67,12 @@ if (maxSupply >=  claimTokens){
 
 function createIssue(string memory _issueDesc, uint _quorum) external {
     
-    if (balance > 0){
+    if (balance[msg.sender] > 0){
 
-if (maxSupply >=  claimTokens){
-     _mint(msg.sender, claimTokens);
-    claimed[msg.sender] == true;
-    maxSupply -= claimTokens;
-    }else {AllTokensClaimed()}
-
+        if(){
+        issues.issueDesc = _issueDesc;
+        issues.quorum = _quorum;
+        }
 }
 } else {revert NoTokensHeld()}
 
@@ -80,8 +80,7 @@ if (maxSupply >=  claimTokens){
 
 
 
-    issues.issueDesc = _issueDesc;
-    issues.quorum = _quorum;
+   
 
 }
 
