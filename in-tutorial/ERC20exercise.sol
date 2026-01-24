@@ -65,14 +65,15 @@ if (maxSupply >=  claimTokens){
 } else {revert TokensClaimed()}
 
 
-function createIssue(string memory _issueDesc, uint _quorum) external {
+function createIssue(string memory _issueDesc, uint _quorum) external returns (uint) {
     
     if (balance[msg.sender] > 0){
 
-        if(){
+        if(claimedSupply > _quorum){
         issues.issueDesc = _issueDesc;
         issues.quorum = _quorum;
-        }
+        return issues[];
+        } else {revert QuorumTooHigh(int256 quorum)}
 }
 } else {revert NoTokensHeld()}
 
