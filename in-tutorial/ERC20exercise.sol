@@ -59,10 +59,10 @@ if (maxSupply >=  claimTokens){
     claimed[msg.sender] == true;
     maxSupply -= claimTokens;
     claimedSupply += claimTokens;
-    }else {AllTokensClaimed()}
+    }else {AllTokensClaimed();}
 
 
-} else {revert TokensClaimed()}
+} else {revert TokensClaimed();}
 
 }
 
@@ -76,16 +76,30 @@ function createIssue(string memory _issueDesc, uint _quorum) external returns (u
         issues.issueDesc = _issueDesc;
         issues.quorum = _quorum;
         return issues[];
-        } else {revert QuorumTooHigh(int256 quorum)}
+        } else {revert QuorumTooHigh(int256 quorum);}
 
 } else {revert NoTokensHeld()}
 
 }
 
 
+function getIssue (uint _id) external returns (Issue calldata) {
+    return issues[_id];
+}
 
 
+mapping (address => bool) public hasVoted;
 
+function vote (uint _issueId, uint _vote) external returns (Issue calldata) {
+    
+    if (issue.closed == false){
+
+        if (hasVoted[msg.sender] == false){
+
+        } revert {AlreadyVoted();}
+
+
+    }else revert {VotingClosed();}
 
 
 }
