@@ -65,7 +65,7 @@ if (maxSupply >=  claimTokens){
 
 function createIssue(string memory _issueDesc, uint _quorum) external {
     
-    if (claimed[msg.sender] == false){
+    if (balance > 0){
 
 if (maxSupply >=  claimTokens){
      _mint(msg.sender, claimTokens);
@@ -74,7 +74,7 @@ if (maxSupply >=  claimTokens){
     }else {AllTokensClaimed()}
 
 }
-} else {revert TokensClaimed()}
+} else {revert NoTokensHeld()}
 
 
 
