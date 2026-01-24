@@ -13,6 +13,7 @@ using EnumerableSet for EnumerableSet.AddressSet;
 
 uint public maxSupply;
 uint public claimedSupply;
+
 // Issue[] public issues;
 
 constructor {
@@ -41,6 +42,7 @@ struct Issue {
 enum Vote { AGAINST, FOR, ABSTAIN }
 
 Issue[] public issues;
+Vote public vote;
 
 //mint to other users. 
   constructor() ERC20("WeightedVoting", "WV") {
@@ -70,12 +72,20 @@ if (maxSupply >=  claimTokens){
 
 function createIssue(string memory _issueDesc, uint _quorum) external returns (uint) {
     
-    if (balance[msg.sender] > 0){
+    if (balanceOf(msg.sender) > 0){
 
         if(claimedSupply > _quorum){
-        issues.issueDesc = _issueDesc;
-        issues.quorum = _quorum;
-        return issues[];
+            Issue newIssue = issues[issueIndex];
+            newIssue.issueDesc = _issueDesc;
+            newIssue.quorum = _quorum;
+            newIssue.votesFor = 0;
+            newIssue.votesAgainst = 0;
+            newIssue.votesAbstain = 0;
+            newIssue.totalVotes = 0;
+            newIssue.passed = false;
+            newIssue.closed = false;
+        return issueIndex;
+        
         } else {revert QuorumTooHigh(int256 quorum);}
 
 } else {revert NoTokensHeld()}
@@ -90,12 +100,13 @@ function getIssue (uint _id) external returns (Issue calldata) {
 
 mapping (address => bool) public hasVoted;
 
-function vote (uint _issueId, uint _vote) external returns (Issue calldata) {
+function vote (uint _issueId, Vote _vote) external returns (Issue calldata) {
     
     if (issue.closed == false){
 
         if (hasVoted[msg.sender] == false){
-
+            vote = _vote;
+            hasVoted[msg.sender] == true;
         } revert {AlreadyVoted();}
 
 
