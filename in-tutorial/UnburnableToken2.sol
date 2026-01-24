@@ -20,9 +20,9 @@ error TokensClaimed(uint _amountClaimed);
 error UnsafeTransfer(uint _balance, uint _msgvalue);
 error BalanceNotEnough(uint _balance);
 
-
 // claim 1000 tokens per address
-function claim (uint _amountClaimed) public {
+function claim () public {
+    uint _amountClaimed = 1000; 
     if (claimed[msg.sender] == 0) {
     if (totalSupply >= _amountClaimed){
         balances[msg.sender] += _amountClaimed;
