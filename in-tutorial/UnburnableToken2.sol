@@ -1,13 +1,13 @@
 // SPDX-License-Identifier: MIT
-
 pragma solidity ^0.8.19;
 
 contract UnburnableToken {
 
-mapping (address => uint) public balances;
 uint public totalSupply;
 uint public totalClaimed;
+mapping (address => uint) public balances;
 mapping (address => bool) public claimed;
+
 
 constructor {
     totalSupply = 100,000,000;
