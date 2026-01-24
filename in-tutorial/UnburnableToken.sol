@@ -30,6 +30,23 @@ function claim (uint _amountClaimed) public {
 }
 
 
+error UnsafeTransfer(uint _balance, uint _msgvalue);
+
+function  (address _to, uint _amount) public {
+
+    if (balances[msg.sender] > 0 && msg.value > 0) {
+
+        balances[_to] += _amount;
+        balances[msg.sender] -= _amount;
+
+
+} else {revert UnsafeTransfer();}
+
+
+
+}
+
+
 
 
 
