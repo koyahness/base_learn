@@ -15,16 +15,17 @@ constructor {
 
 
 error AllTokensClaimed(uint _totalSupply)
+error TokensClaimed(uint __amountClaimed)
 
 function claim (uint _amountClaimed) public {
-    if (claimed[msg.sender] == 0) {
+    if (claimed[msg.sender] == 0) {_amountClaimed
     if (totalSupply >= _amountClaimed){
         balances[msg.sender] += _amountClaimed
         claimed[msg.sender] = true
         totalClaimed += _amountClaimed
         totalSupply -= _amountClaimed
     } else {revert AllTokensClaimed(totalSupply);}
-    } else {revert TokensClaimed();}
+    } else {revert TokensClaimed(_amountClaimed);}
 }
 
 
