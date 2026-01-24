@@ -16,6 +16,8 @@ constructor {
 
 error AllTokensClaimed(uint _totalSupply);
 error TokensClaimed(uint __amountClaimed);
+error UnsafeTransfer(uint _balance, uint _msgvalue);
+error BalanceNotEnough(uint _balance);
 
 function claim (uint _amountClaimed) public {
     if (claimed[msg.sender] == 0) {
@@ -29,8 +31,7 @@ function claim (uint _amountClaimed) public {
 }
 
 
-error UnsafeTransfer(uint _balance, uint _msgvalue);
-error BalanceNotEnough(uint _balance);
+
 
 function safeTransfer (address _to, uint _amount) public {
     if (balances[msg.sender] > 0 && _to.balance > 0 && _to != address(0)) {
