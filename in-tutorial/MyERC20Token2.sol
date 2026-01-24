@@ -12,7 +12,7 @@ contract MyERC20Token is ERC20 {
     // Like any other function, you can pass variables of any name as long as they’re the right type, so feel free to continue adding the _ in front in your contract’s constructor:
 
 constructor(string memory _name, string memory _symbol) ERC20(_name, _symbol) {
-
+    _mint(msg.sender, 1 * 10**18);
 }
 
 // That’s it. You’re done! Deploy and test, and you should see all of the functionality called for by the standard and provided by the OpenZeppelin implementation.
