@@ -15,6 +15,7 @@ constructor {
 
 
 error AllTokensClaimed(uint _totalSupply);
+
 error TokensClaimed(uint __amountClaimed);
 
 function claim (uint _amountClaimed) public {
