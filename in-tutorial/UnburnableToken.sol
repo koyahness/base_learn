@@ -34,17 +34,12 @@ error UnsafeTransfer(uint _balance, uint _msgvalue);
 error BalanceNotEnough(uint _balance);
 
 function  (address _to, uint _amount) public {
-
     if (balances[msg.sender] > 0 && msg.value > 0) {
-
         if (balances[msg.sender] > _amount) {
              balances[_to] += _amount;
              balances[msg.sender] -= _amount;
-             
         } else {revert BalanceNotEnough(balances[msg.sender]);}
-
 } else {revert UnsafeTransfer();}
-
 }
 
 }
