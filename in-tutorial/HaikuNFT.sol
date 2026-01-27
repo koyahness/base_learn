@@ -63,8 +63,8 @@ function shareHaiku (address _to, uint _id) public {
 
 
 
-function getMySharedHaikus () public {
-
+function getMySharedHaikus () public returns (Haiku[] memory) {
+return haikus;
 }
 
 
