@@ -57,11 +57,14 @@ function shareHaiku (address _to, uint _id) public {
 }
 
 
+error NoHaikusShared();
 
-function getMySharedHaikus () public returns (Haiku[] memory) {
+function getMySharedHaikus () public returns (uint[] memory) {
+    uint[] sharedids;
     if (sharedHaikus[msg.sender] != 0){
-        
-    }
+       int id = sharedHaikus[msg.sender];
+       sharedids.push(id);
+    } else revert {NoHaikusShared();}
 }
 
 
