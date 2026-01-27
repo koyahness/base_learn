@@ -13,7 +13,7 @@ struct Haiku {
 
 Haiku[] public haikus;
 
-mapping (address => _haikuid) sharedHaikus;
+mapping (address =>uint[]) sharedHaikus; // changed _haikuid to uint[] since address can have more then one share _haikuid
 
 
 uint counter = 1;
