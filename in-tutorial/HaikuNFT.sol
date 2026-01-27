@@ -17,25 +17,42 @@ mapping (address => _haikuid) sharedHaikus;
 
 
 uint counter = 1;
-
+uint public mintedcounter = counter - 1;
 
 
 constructor () {
     
     }
 
-
+error HaikuNotUnique();
 
 function mintHaiku (string memory _line1, string memory _line2, string memory _line3) external {
 
-    Haiku haiku_init = Haiku();
+//if(If any line in the Haiku has been used as any line of a previous Haiku, revert with HaikuNotUnique())
+
+for(uint i = 0; i < haikus.length; i++) {}
+
+
+
+
+
+
+
+        if((haikus[i]).line1 !=  _line1 || (haikus[i]).line1 !=  _line2 || (haikus[i]).line1 !=  _line3) {
+            result++;
+        Haiku haiku_init = Haiku();
     haiku_init.authorAddress = msg.sender;
     haiku_init.line1 = _line1;
     haiku_init.line2 = _line2;
     haiku_init.line3 = _line3;
     haiku_init.haikuid = counter
     counter++;
+    haikus = haikus.push(haiku_init)
+ else {revert HaikuNotUnique();}
  
+
+
+
 }
 
 
